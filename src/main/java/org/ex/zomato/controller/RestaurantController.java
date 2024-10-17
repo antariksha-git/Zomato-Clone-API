@@ -1,6 +1,7 @@
 package org.ex.zomato.controller;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.ex.zomato.requestDto.RestaurantRequest;
 import org.ex.zomato.responseDto.RestaurantResponse;
 import org.ex.zomato.service.RestaurantService;
@@ -12,13 +13,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("${zomato.base_url}")
+@AllArgsConstructor
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
-
-    public RestaurantController(RestaurantService restaurantService) {
-        this.restaurantService = restaurantService;
-    }
 
     @PostMapping("/restaurant")
     public ResponseEntity<ResponseStructure<RestaurantResponse>> addRestaurant(@RequestBody @Valid RestaurantRequest restaurantRequest) {
