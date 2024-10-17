@@ -1,9 +1,6 @@
 package org.ex.zomato.requestDto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.ex.zomato.enums.DietType;
@@ -15,6 +12,7 @@ import java.util.List;
 public class RestaurantRequest {
 
     @NotBlank(message = "Name is required")
+    @NotNull(message = "Name cannot be null")
     private String name;
 
     @NotBlank(message = "Description is required")
@@ -26,7 +24,7 @@ public class RestaurantRequest {
 
     @NotBlank(message = "Email is required")
     @Email(message = "Email should be valid")
-    @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "Email must be a valid format")
+    //@Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "Email must be a valid format")
     private String email;
 
     @NotEmpty(message = "At least one diet type is required")
