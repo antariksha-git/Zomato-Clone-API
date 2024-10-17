@@ -1,18 +1,20 @@
 spring:
   application:
-    name: Zomato-Clone-API
+    name: Zomato-Clone-API  # Name of the Spring application
 
-  #Datasource configuration
   datasource:
-    url: jdbc:mysql://localhost:3306/zomato_clone_api_db?createDatabaseIfNotExist=true
-    username: root
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zomato_clone_api_db?createDatabaseIfNotExist=true  # Database URL with option to create DB if it doesn't exist
+    username: root  # Database username
+    password: password  # Database password (consider using a more secure method for production)
+    driver-class-name: com.mysql.cj.jdbc.Driver  # JDBC driver for MySQL
 
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: update  # Automatically updates the database schema; use cautiously in production
+    show-sql: true  # Enables SQL logging to console
     properties:
       hibernate:
-        format_sql: true
+        format_sql: true  # Formats SQL queries for better readability in logs
+
+zomato:
+  base_url: api/v1/  # Base URL for the Zomato API endpoints
