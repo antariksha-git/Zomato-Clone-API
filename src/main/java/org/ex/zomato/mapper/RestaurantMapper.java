@@ -10,7 +10,8 @@ public class RestaurantMapper {
         restaurant.setDescription(restaurantRequest.getDescription());
         restaurant.setName(restaurantRequest.getName());
         restaurant.setEmail(restaurantRequest.getEmail());
-        restaurant.setPhoneNumber(restaurant.getPhoneNumber());
+        restaurant.setPhoneNumber(restaurantRequest.getPhoneNumber());
+        restaurant.setDietTypes(restaurantRequest.getDietTypes());
 
         return restaurant;
     }
@@ -21,6 +22,8 @@ public class RestaurantMapper {
         restaurantResponse.setName(restaurant.getName());
         restaurantResponse.setEmail(restaurant.getEmail());
         restaurantResponse.setPhoneNumber(restaurant.getPhoneNumber());
+        restaurantResponse.setRestaurantId(restaurant.getRestaurantId());
+        restaurantResponse.setDietTypes(restaurant.getDietTypes());
 
         return restaurantResponse;
     }
