@@ -13,6 +13,6 @@ public class RestaurantNotFoundHandler {
 
     @ExceptionHandler(RestaurantNotFoundByIdException.class)
     public ResponseEntity<ErrorStructure<String>> handleRestaurantNotFoundByIdException(RestaurantNotFoundByIdException e) {
-        return AppResponseBuilder.error(HttpStatus.NOT_FOUND, e.getMessage(), "Given id doesn't exist");
+        return AppResponseBuilder.error(HttpStatus.NOT_FOUND, e.getMessage(), "Given restaurant id doesn't exist");
     }
 }
