@@ -5,14 +5,16 @@ import org.ex.zomato.mapper.RestaurantMapper;
 import org.ex.zomato.repository.RestaurantRepository;
 import org.ex.zomato.requestDto.RestaurantRequest;
 import org.ex.zomato.responseDto.RestaurantResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RestaurantService {
 
-    @Autowired
     RestaurantRepository restaurantRepository;
+
+    public RestaurantService(RestaurantRepository restaurantRepository) {
+        this.restaurantRepository = restaurantRepository;
+    }
 
     public RestaurantResponse addRestaurant(RestaurantRequest restaurantRequest) {
         Restaurant restaurant = restaurantRepository.save(RestaurantMapper

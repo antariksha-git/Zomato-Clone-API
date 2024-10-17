@@ -25,7 +25,7 @@ public class FieldErrorExceptionHandler extends ResponseEntityExceptionHandler {
                 .toList();
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(ErrorStructure.getErrorStructure(HttpStatus.BAD_REQUEST, errors,"Invalid Input"));
+                .body(ErrorStructure.getErrorStructure(HttpStatus.BAD_REQUEST, errors, "Invalid Input"));
     }
 
     @Getter

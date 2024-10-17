@@ -15,5 +15,4 @@ public class RestaurantResponse {
     private String phoneNumber;
     private String email;
     private List<DietType> dietTypes;
-
 }
