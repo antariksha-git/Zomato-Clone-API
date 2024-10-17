@@ -23,4 +23,10 @@ public class RestaurantController {
         RestaurantResponse restaurantResponse = restaurantService.addRestaurant(restaurantRequest);
         return AppResponseBuilder.create(HttpStatus.CREATED, "Restaurant Added", restaurantResponse);
     }
+
+    @GetMapping("/restaurant/{restaurant_id}")
+    public ResponseEntity<ResponseStructure<RestaurantResponse>> findRestaurantById(@PathVariable("restaurant_id") String restaurantId) {
+        RestaurantResponse restaurantResponse = restaurantService.findRestaurantById(restaurantId);
+        return AppResponseBuilder.create(HttpStatus.OK, "Restaurant Found", restaurantResponse);
+    }
 }
