@@ -1,4 +1,4 @@
-package org.ex.zomato.responseDto;
+package org.ex.zomato.requestDto;
 
 import lombok.Getter;
 import lombok.Setter;
