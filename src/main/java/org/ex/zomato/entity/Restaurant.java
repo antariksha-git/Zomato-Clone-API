@@ -33,4 +33,7 @@ public class Restaurant {
     @Column(name = "diet_types")
     @ElementCollection
     private List<DietType> dietTypes;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
 }
