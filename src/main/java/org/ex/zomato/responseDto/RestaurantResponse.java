@@ -2,6 +2,7 @@ package org.ex.zomato.responseDto;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.ex.zomato.entity.Address;
 import org.ex.zomato.enums.DietType;
 
 import java.util.List;
@@ -15,4 +16,5 @@ public class RestaurantResponse {
     private String phoneNumber;
     private String email;
     private List<DietType> dietTypes;
+    private Address address;
 }

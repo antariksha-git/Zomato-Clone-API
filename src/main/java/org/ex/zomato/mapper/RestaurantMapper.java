@@ -24,6 +24,7 @@ public class RestaurantMapper {
         restaurantResponse.setPhoneNumber(restaurant.getPhoneNumber());
         restaurantResponse.setRestaurantId(restaurant.getRestaurantId());
         restaurantResponse.setDietTypes(restaurant.getDietTypes());
+        restaurantResponse.setAddress(restaurant.getAddress());
 
         return restaurantResponse;
     }
