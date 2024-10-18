@@ -28,4 +28,13 @@ public class RestaurantService {
 
         return RestaurantMapper.mapToRestaurantResponse(restaurant);
     }
+
+    public RestaurantResponse updateRestaurant(String id, RestaurantRequest restaurantRequest) {
+       return restaurantRepository.findById(id)
+                .map(r -> {
+                    restaurantRepository.save(RestaurantMapper.mapToRestaurant(restaurantRequest, r));
+                    return RestaurantMapper.mapToRestaurantResponse(r);
+                })
+                .orElseThrow(() -> new RestaurantNotFoundByIdException("Restaurant not found"));
+    }
 }
