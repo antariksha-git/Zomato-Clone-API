@@ -12,6 +12,6 @@ public class CustomIdGenerator implements IdentifierGenerator {
     public Object generate(SharedSessionContractImplementor session, Object object) {
         UUID uuid = UUID.randomUUID();
 
-        return "zomato" + Year.now() + uuid.toString();
+        return "zomato" + Year.now() + uuid.toString().substring(0, 6);
     }
 }
