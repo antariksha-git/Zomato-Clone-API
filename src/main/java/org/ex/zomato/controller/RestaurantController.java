@@ -29,4 +29,10 @@ public class RestaurantController {
         RestaurantResponse restaurantResponse = restaurantService.findRestaurantById(restaurantId);
         return AppResponseBuilder.create(HttpStatus.OK, "Restaurant Found", restaurantResponse);
     }
+
+    @PutMapping("restaurant/{restaurant_id}")
+    public ResponseEntity<ResponseStructure<RestaurantResponse>> updateRestaurant(@RequestBody @Valid RestaurantRequest restaurantRequest, @PathVariable("restaurant_id") String restaurantId) {
+        RestaurantResponse restaurantResponse = restaurantService.updateRestaurant(restaurantId, restaurantRequest);
+        return AppResponseBuilder.create(HttpStatus.OK, "Restaurant Updated", restaurantResponse);
+    }
 }
